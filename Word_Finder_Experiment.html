@@ -70,11 +70,26 @@
     const timer = document.getElementById('timer');
 
     const pages = [
-      ['COLOR', 'DOOR', 'TREE'],
+      ['COLOR', 'TREE', 'DOOR'],
       ['APPLE', 'MAP'],
       ['SUN', 'CODE', 'CAR'],
       ['BOOK', 'FISH'],
-      ['WIND', 'DOG', 'CAT']
+      ['WIND', 'DOG', 'CAT'],
+      ['SKY', 'MOON'],
+      ['TASK', 'TOP'],
+      ['YES', 'NO'],
+      ['WIN', 'LOSE'],
+      ['GO', 'STOP'],
+      ['FIRE'],
+      ['JUMP'],
+      ['RED', 'BLUE'],
+      ['COAT', 'COOL'],
+      ['DATA'],
+      ['MAPLE', 'RING'],
+      ['LAMP'],
+      ['WALL'],
+      ['COLD'],
+      ['HILL']
     ];
 
     let currentPage = 0;
@@ -149,6 +164,10 @@
         textContainer.innerHTML = '<div class="resting">✅ Game Over! Thank you!</div>';
         wordBox.textContent = '';
         timer.textContent = '';
+      } else if (currentPage % 5 === 0) {
+        textContainer.innerHTML = '<div class="resting">⏳ Resting 60 seconds...</div>';
+        timer.textContent = '';
+        setTimeout(() => displayPage(currentPage), 60000);
       } else {
         textContainer.innerHTML = '<div class="resting">⏳ Resting 30 seconds...</div>';
         timer.textContent = '';
